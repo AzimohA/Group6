@@ -7,10 +7,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-//allows us to inherit all the javafx funtionlaity into this class
+//inherits all javafx functionality into this class
 public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
+
 	}
 	@Override
 	public void start(Stage primaryStage) {
