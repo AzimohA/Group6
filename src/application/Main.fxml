@@ -17,7 +17,7 @@
             <Button fx:id="click" layoutX="434.0" layoutY="175.0" mnemonicParsing="false" onAction="#generateRandom" text="Button" />
             <Label fx:id="myRan" layoutX="434.0" layoutY="110.0" prefHeight="52.0" prefWidth="65.0" text="Label" />
             <TextArea fx:id="textArea" layoutX="29.0" layoutY="50.0" prefHeight="250.0" prefWidth="200.0" />
-            <Button fx:id="load" layoutX="442.0" layoutY="227.0" mnemonicParsing="false" onAction="#fileSelect" text="Load" />
+            <Button fx:id="load" layoutX="846.0" layoutY="625.0" mnemonicParsing="false" onAction="#fileSelect" text="Load" />
             <VBox layoutX="961.0" prefHeight="800.0" prefWidth="319.0">
                <children>
                   <TextArea editable="false" prefHeight="686.0" prefWidth="319.0" />
