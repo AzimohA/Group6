@@ -18,7 +18,7 @@ public class Main extends Application {
 		try {
 			//Parent  root = new BorderPane();
 			Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-			Scene scene = new Scene(root,1280,800);
+			Scene scene = new Scene(root,1289,800);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("DiagSim");
 			primaryStage.setScene(scene);
