@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="1013.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Pane layoutY="30.0" prefHeight="350.0" prefWidth="526.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="-36.0" prefHeight="483.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="click" layoutX="248.0" layoutY="207.0" mnemonicParsing="false" onAction="#generateRandom" text="Button" />
-            <Label fx:id="myRan" layoutX="248.0" layoutY="149.0" prefHeight="52.0" prefWidth="65.0" text="Label" />
-            <TextArea fx:id="textArea" layoutX="29.0" layoutY="50.0" prefHeight="250.0" prefWidth="200.0" />
-            <Button fx:id="load" layoutX="248.0" layoutY="244.0" mnemonicParsing="false" onAction="#fileSelect" text="Load" />
+            <Button fx:id="click" alignment="CENTER" layoutX="344.0" layoutY="510.0" mnemonicParsing="false" onAction="#generateRandom" text="connect" />
+            <Label fx:id="myRan" alignment="CENTER" layoutX="273.0" layoutY="497.0" prefHeight="52.0" prefWidth="65.0" text="Label" />
+            <TextArea fx:id="textArea" layoutX="11.0" layoutY="50.0" prefHeight="250.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="load" alignment="CENTER" layoutX="91.0" layoutY="306.0" mnemonicParsing="false" onAction="#fileSelect" text="Load" />
+            <ScrollPane layoutX="220.0" layoutY="50.0" prefHeight="452.0" prefViewportHeight="250.0" prefViewportWidth="200.0" prefWidth="441.0">
+               <content>
+                  <Pane fx:id="pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </content>
+            </ScrollPane>
+            <Button fx:id="draw" alignment="CENTER" layoutX="417.0" layoutY="510.0" mnemonicParsing="false" onAction="#drawLine" text="grid" />
+            <VBox layoutX="669.0" layoutY="50.0" prefHeight="580.0" prefWidth="330.0" style="-fx-background-color: #607D8B;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="64.0" prefWidth="329.0" style="-fx-background-color: #4b7697; -fx-border-color: #212121;" text="Session Information" textAlignment="CENTER" />
+                  <TextArea editable="false" prefHeight="485.0" prefWidth="268.0" style="-fx-border-color: #212121;" />
+                  <TextField prefHeight="102.0" prefWidth="299.0" promptText="Send a message..." style="-fx-border-color: #212121;">
+                     <VBox.margin>
+                        
+                     </VBox.margin></TextField>
+                  <AnchorPane prefHeight="0.0" prefWidth="329.0">
+                     <children>
+                        <Label alignment="CENTER" layoutY="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="213.0" style="-fx-background-color: #607D8B; -fx-border-color: #212121;" text="User Information" />
+                        <Button layoutX="207.0" layoutY="24.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="122.0" style="-fx-background-color: #a74242; -fx-border-color: #212121;" text="Chat">
+                           
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Text layoutX="447.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JSON UML SIMULATOR">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
          </children></Pane>
    </children>
 </AnchorPane>
