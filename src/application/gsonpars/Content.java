@@ -17,7 +17,18 @@ public class Content {
     private String node;
     @SerializedName("content")
     @Expose
-    private List<Content_> content_ = null;
+    private List<Content_> content_ = new ArrayList<Content_>();
+
+    public Content()
+    {
+        // Empty constructor
+    }
+
+    public Content(String node, List<Content_> content_)
+    {
+        this.node = node;
+        this.content_ = content_;
+    }
 
     public String getNode() {
         return node;

@@ -3,6 +3,7 @@ package application.gsonpars;
 /**
  * Created by Nina on 2017-10-28.
  */
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.Expose;
@@ -18,7 +19,7 @@ public class Meta {
     private String version;
     @SerializedName("extensions")
     @Expose
-    private List<Object> extensions = null;
+    private List<Object> extensions = new ArrayList<Object>();
 
     public String getFormat() {
         return format;

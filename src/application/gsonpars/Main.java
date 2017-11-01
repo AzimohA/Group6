@@ -20,15 +20,19 @@ public class Main {
             GsonParser gp = gson.fromJson(br, GsonParser.class);
             //System.out.println(gp);
 
-            List<Content> list = gp.getDiagram().getContent();
-
+            System.out.print(gp.getDiagram().getContent());
             if (gp != null) {
-                for (Content c : list)
+                for (Content c : gp.getDiagram().getContent())
                     for (Content_ con : c.getContent()) {
                         System.out.print("from: " + con.getFrom() + "\n" +
                                 "to: " + con.getTo() + "\n" +
                                 "message: " + con.getMessage() + "\n\n");
                     }
+
+                /*for (Process p : gp.getProcesses()){
+                    System.out.print("class: " + p.getClass_() + "; name: " + p.getName() + "\n");
+                }*/
+                
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
