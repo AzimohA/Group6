@@ -17,7 +17,7 @@ public class Diagram {
     private String node;
     @SerializedName("content")
     @Expose
-    private static List<Content> content = new ArrayList<Content>();
+    private List<Content> content = new ArrayList<Content>();
 
     public String getNode() {
         return node;
@@ -27,9 +27,7 @@ public class Diagram {
         this.node = node;
     }
 
-    public static List<Content> getContent() {
-        return content;
-    }
+    public List<Content> getContent() { return content; }
 
     public void setContent(List<Content> content) {
         this.content = content;

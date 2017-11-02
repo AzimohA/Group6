@@ -47,9 +47,7 @@ public class GsonParser {
         this.processes = processes;
     }
 
-    public Diagram getDiagram() {
-        return diagram;
-    }
+    public Diagram getDiagram() { return diagram; }
 
     public void setDiagram(Diagram diagram) {
         this.diagram = diagram;

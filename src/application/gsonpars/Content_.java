@@ -25,19 +25,6 @@ public class Content_ {
     @Expose
     private List<String> message = new ArrayList<String>();
 
-    public Content_()
-    {
-        // Empty constructor
-    }
-
-    public Content_(String node, String from, String to, List<String> message)
-    {
-        this.node = node;
-        this.from = from;
-        this.to = to;
-        this.message = message;
-    }
-
     public String getNode() {
         return node;
     }

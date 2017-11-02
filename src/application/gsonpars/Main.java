@@ -18,9 +18,7 @@ public class Main {
         try {
             br = new BufferedReader(new FileReader("example.json"));
             GsonParser gp = gson.fromJson(br, GsonParser.class);
-            //System.out.println(gp);
 
-            System.out.print(gp.getDiagram().getContent());
             if (gp != null) {
                 for (Content c : gp.getDiagram().getContent())
                     for (Content_ con : c.getContent()) {
@@ -28,11 +26,6 @@ public class Main {
                                 "to: " + con.getTo() + "\n" +
                                 "message: " + con.getMessage() + "\n\n");
                     }
-
-                /*for (Process p : gp.getProcesses()){
-                    System.out.print("class: " + p.getClass_() + "; name: " + p.getName() + "\n");
-                }*/
-                
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
