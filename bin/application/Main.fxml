@@ -11,13 +11,31 @@
    <children>
       <Pane layoutX="-36.0" prefHeight="483.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="click" alignment="CENTER" layoutX="344.0" layoutY="510.0" mnemonicParsing="false" onAction="#generateRandom" text="connect" />
-            <Label fx:id="myRan" alignment="CENTER" layoutX="273.0" layoutY="497.0" prefHeight="52.0" prefWidth="65.0" text="Label" />
+            <Button fx:id="click" alignment="CENTER" layoutX="365.0" layoutY="511.0" mnemonicParsing="false" onAction="#generateRandom" text="send" />
+            <Label fx:id="myRan" alignment="CENTER" layoutX="236.0" layoutY="505.0" prefHeight="52.0" prefWidth="65.0" />
             <TextArea fx:id="textArea" layoutX="11.0" layoutY="50.0" prefHeight="250.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Button fx:id="load" alignment="CENTER" layoutX="91.0" layoutY="306.0" mnemonicParsing="false" onAction="#fileSelect" text="Load" />
             <ScrollPane layoutX="220.0" layoutY="50.0" prefHeight="452.0" prefViewportHeight="250.0" prefViewportWidth="200.0" prefWidth="441.0">
                <content>
-                  <Pane fx:id="pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TabPane>
+                     <tabs>
+                        <Tab text="Sequence diagram">
+                           <content>
+                              <Pane fx:id="pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </content>
+                        </Tab>
+                        <Tab>
+                           <content>
+                              <Pane fx:id="pane1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </content>
+                        </Tab>
+                        <Tab>
+                           <content>
+                              <Pane fx:id="pane11" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
                </content>
             </ScrollPane>
             <Button fx:id="draw" alignment="CENTER" layoutX="417.0" layoutY="510.0" mnemonicParsing="false" onAction="#drawLine" text="grid" />
@@ -44,6 +62,8 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
+            <RadioButton fx:id="client" layoutX="463.0" layoutY="514.0" mnemonicParsing="false" onAction="#serverConnect" prefHeight="17.0" prefWidth="50.0" text="Server/Client" />
+            <Button fx:id="send" layoutX="532.0" layoutY="510.0" mnemonicParsing="false" onAction="#sendFile" prefHeight="25.0" prefWidth="50.0" text="Simulation" />
          </children></Pane>
    </children>
 </AnchorPane>
