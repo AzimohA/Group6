@@ -63,7 +63,7 @@
                </font>
             </Text>
             <RadioButton fx:id="client" layoutX="463.0" layoutY="514.0" mnemonicParsing="false" onAction="#serverConnect" prefHeight="17.0" prefWidth="50.0" text="Server/Client" />
-            <Button fx:id="send" layoutX="532.0" layoutY="510.0" mnemonicParsing="false" onAction="#sendFile" prefHeight="25.0" prefWidth="50.0" text="Simulation" />
+            <Button fx:id="mock" layoutX="532.0" layoutY="510.0" mnemonicParsing="false" onAction="#mockAnimation" prefHeight="25.0" prefWidth="50.0" text="animate" />
          </children></Pane>
    </children>
 </AnchorPane>

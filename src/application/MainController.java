@@ -48,7 +48,7 @@ public class MainController extends Thread implements Initializable {
 	@FXML
 	public RadioButton client;
 	@FXML 
-	public Button send;
+	public Button mock;
 	public Canvas canvas;
 	public int count =0;
 	UMLmodels md = new UMLmodels();
@@ -67,7 +67,7 @@ public class MainController extends Thread implements Initializable {
          
          pane.getChildren().add(canvas);
          pane.setStyle("-fx-background-color: white;");
-         send.setStyle("-fx-background-color: blue;");
+         mock.setStyle("-fx-background-color: blue;");
 		// TODO Auto-generated method stub
 		
 
@@ -92,37 +92,43 @@ public class MainController extends Thread implements Initializable {
 	 public void sendFile(ActionEvent event)throws IOException {
 		// GraphicsContext gc1 = null;
 		//drawObjects1();
-		 count++;
-		 System.out.println(count);
-		 switch (count) {
-			case 1: md.drawObjects1( md.gc1);
-			        break;
-			case 2: md.drawObjects(md.gc);
-	                break;
-			case 3: md.node3(md.gc2);
-					break;
-			case 4: md.gc1.fillText("msg1", 145, 120);
-			        md.gc1.fillText("msg2", 145, 145);
-			        md.drawArrow(md.arr,110, 125,210, 125);
-			        break;
-			case 5: md.drawArrowOpp(md.arrOpp,110, 150,210, 150);
-					break;
-			case 6: md.drawArrowOpp(md.arrOpp,220, 185,320, 185);
-					break;
-			case 7: md.drawArrow(md.arr,220, 210,320, 210);
-					break;
-			case 8: md.drawArrowOpp(md.arrOpp,110, 245,320, 245);
-			break;
-			case 9: md.gc.clearRect(-150, -200, canvas.getWidth(), canvas.getHeight());
-			        initialize(null, null);
-			        count = 0;
-	 
-			default: break;
-			
-			}
 		
 	 }
 	
+	 public void mockAnimation(ActionEvent event)throws IOException {
+			// GraphicsContext gc1 = null;
+			//drawObjects1();
+			 count++;
+			 System.out.println(count);
+			 switch (count) {
+				case 1: md.drawObjects1( md.gc1);
+				        break;
+				case 2: md.drawObjects(md.gc);
+		                break;
+				case 3: md.node3(md.gc2);
+						break;
+				case 4: md.gc1.fillText("msg1", 145, 120);
+				        md.gc1.fillText("msg2", 145, 145);
+				        md.drawArrow(md.arr,110, 125,210, 125);
+				        break;
+				case 5: md.drawArrowOpp(md.arrOpp,110, 150,210, 150);
+						break;
+				case 6: md.drawArrowOpp(md.arrOpp,220, 185,320, 185);
+						break;
+				case 7: md.drawArrow(md.arr,220, 210,320, 210);
+						break;
+				case 8: md.drawArrowOpp(md.arrOpp,110, 245,320, 245);
+				break;
+				case 9: md.gc.clearRect(-150, -200, canvas.getWidth(), canvas.getHeight());
+				        initialize(null, null);
+				        count = 0;
+		 
+				default: break;
+				
+				}
+			
+		 }
+		
 	
 	 
 	//@SuppressWarnings("unused")
