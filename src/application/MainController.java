@@ -49,28 +49,28 @@ public class MainController extends Thread implements Initializable {
 	public RadioButton client;
 	@FXML 
 	public Button send;
-	//Pane pane = new Pane();
-	public GraphicsContext gc, gc1, gc2,gc3, arr,arrOpp;
 	public Canvas canvas;
 	public int count =0;
-	private final int ARR_SIZE = 4;
+	UMLmodels md = new UMLmodels();
+	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-	
+		
 		 canvas = new Canvas(400,400); 
-		 gc = canvas.getGraphicsContext2D();
-		 gc1 = canvas.getGraphicsContext2D();
-		 gc2 = canvas.getGraphicsContext2D();
-		 gc3 = canvas.getGraphicsContext2D();
-         arr =canvas.getGraphicsContext2D();
-         arrOpp =canvas.getGraphicsContext2D();
+		 md.gc = canvas.getGraphicsContext2D();
+		 md.gc1 = canvas.getGraphicsContext2D();
+		 md.gc2 = canvas.getGraphicsContext2D();
+		 md.gc3 = canvas.getGraphicsContext2D();
+		 md.arr = canvas.getGraphicsContext2D();
+		 md.arrOpp =canvas.getGraphicsContext2D();
          
-        pane.getChildren().add(canvas);
-        pane.setStyle("-fx-background-color: white;");
-        send.setStyle("-fx-background-color: blue;");
+         pane.getChildren().add(canvas);
+         pane.setStyle("-fx-background-color: white;");
+         send.setStyle("-fx-background-color: blue;");
 		// TODO Auto-generated method stub
 		
-		//group.getChildren().add(new Circle(0, 0, 10));
+
 		
 	for (int i = 0; i <600; i+=10)
 		{
@@ -86,104 +86,7 @@ public class MainController extends Thread implements Initializable {
 		
 		}
 	 canvas.toFront();
-	// drawObjects(gc);
-		
-	  //life lines
-	/*
-	Rectangle r2 = new Rectangle(250,25,100,140);
-	r2.setStroke(Color.BLACK);
-	r2.setFill(null);
-	r2.setStrokeWidth(3);
-	r2.setArcWidth(25);
-	r2.setArcHeight(25);
-	// pane.getChildren().add(r2);
-   */
-	
 	}
-	
-	///@SuppressWarnings("null")
-	private void drawObjects1(GraphicsContext gc1) {
-	//	GraphicsContext gc1 = null;
-		//gc1.setStroke(Color.BLACK);
-		
-		//gc1.setFill(Color.WHITE);
-		gc1.setFill(Color.GREY);
-		gc1.fillRoundRect(80, 60, 50, 40, 10, 10);
-		//gc1.strokeRoundRect(100, 60, 40, 30, 10, 10);
-		gc1.setLineDashes(2);
-		gc1.fillRect(100, 110, 10, 50);
-		gc1.strokeLine(105, 100,105, 300);
-		gc1.fillText("Node A", 85, 50);
-		//gc1.fillText("msg1", 145, 120);
-		//gc1.fillText("msg2", 145, 145);
-		gc1.fillRect(100, 230, 10, 30);
-		//gc1.strokeLine(110, 125,210, 125);
-		//gc1.fillPolygon(xPoints, yPoints, nPoints);
-		//drawArrow(arr,110, 125,210, 125);
-	}
-	
-	public void drawArrow(GraphicsContext arr, int x1, int y1, int x2, int y2) {
-
-	    arr.setFill(Color.BLACK);
-
-	    double dx = x2 - x1, dy = y2 - y1;
-	    double angle = Math.atan2(dy, dx);
-	    int len = (int) Math.sqrt(dx * dx + dy * dy);
-
-	    Affine affine = new Affine(Affine.translate(x1, y1));
-	    affine.createConcatenation(Affine.rotate(angle, 0, 0));
-	    arr.setTransform(affine);
-
-	    arr.strokeLine(0, 0, len, 0);
-	    arr.fillPolygon(new double[]{len, len - ARR_SIZE, len - ARR_SIZE, len}, new double[]{0, -ARR_SIZE, ARR_SIZE, 0},
-	            4);
-
-	}
-	
-	public void drawArrowOpp(GraphicsContext arrOpp,int x2, int y1, int x1, int y2) {
-		 arrOpp.setFill(Color.BLACK);
-
-		    double dx = x2 - x1, dy = y2 - y1;
-		    double angle = Math.atan2(dy, dx);
-		    int len = (int) Math.sqrt(dx * dx + dy * dy);
-
-		    Transform transform = Transform.translate(x1, y1);
-		    transform = transform.createConcatenation(Transform.rotate(Math.toDegrees(angle), 0, 0));
-		    arrOpp.setTransform(new Affine(transform));
-
-		    arrOpp.strokeLine(0, 0, len, 0);
-		    arrOpp.fillPolygon(new double[]{len, len - ARR_SIZE, len - ARR_SIZE, len}, new double[]{0, -ARR_SIZE, ARR_SIZE, 0},
-		            4);
-	}
-	
-	public void drawObjects(GraphicsContext gc) {
-		//gc.setStroke(Color.BLACK);
-	
-		gc.fillRoundRect(190, 60, 50, 40, 10, 10); 
-		gc.fillRect(210, 110, 10, 50);
-		gc.fillText("Node B", 195, 50);
-		//gc.setLineWidth(1);
-   //   gc.strokeLine(120, 90,120, 200);
-      gc.strokeLine(215, 100,215, 300);
-      gc.fillRect(210, 170, 10, 50);// 2nd message'
-      gc.fillText("msg5", 200, 240);
-	
-	}
-	
-	public void node3(GraphicsContext gc2) {
-		//gc2.setStroke(Color.BLACK);
-		gc2.fillRoundRect(300, 60, 50, 40, 10, 10); 
-		gc2.fillText("Node C", 305, 50);
-		//gc2.setLineWidth(2);
-   //   gc.strokeLine(120, 90,120, 200);
-		gc2.fillRect(320, 170, 10, 50);
-        gc2.strokeLine(325, 100,325, 300);
-        gc2.fillRect(320, 230, 10, 30);
-        gc1.fillText("msg3", 250, 180);
-        gc1.fillText("msg4", 250, 200);
-	}
-	
-	
 	
 	
 	 public void sendFile(ActionEvent event)throws IOException {
@@ -191,59 +94,33 @@ public class MainController extends Thread implements Initializable {
 		//drawObjects1();
 		 count++;
 		 System.out.println(count);
-
-		 if(count==1) {	 
-		 drawObjects1(gc1);
-		}
-		if(count==2) {
+		 switch (count) {
+			case 1: md.drawObjects1( md.gc1);
+			        break;
+			case 2: md.drawObjects(md.gc);
+	                break;
+			case 3: md.node3(md.gc2);
+					break;
+			case 4: md.gc1.fillText("msg1", 145, 120);
+			        md.gc1.fillText("msg2", 145, 145);
+			        md.drawArrow(md.arr,110, 125,210, 125);
+			        break;
+			case 5: md.drawArrowOpp(md.arrOpp,110, 150,210, 150);
+					break;
+			case 6: md.drawArrowOpp(md.arrOpp,220, 185,320, 185);
+					break;
+			case 7: md.drawArrow(md.arr,220, 210,320, 210);
+					break;
+			case 8: md.drawArrowOpp(md.arrOpp,110, 245,320, 245);
+			break;
+			case 9: md.gc.clearRect(-150, -200, canvas.getWidth(), canvas.getHeight());
+			        initialize(null, null);
+			        count = 0;
+	 
+			default: break;
+			
+			}
 		
-			 drawObjects(gc);			
-		}
-		if(count==3) {
-			node3(gc2);
-		}
-		
-		if(count==4) {
-			gc1.fillText("msg1", 145, 120);
-			gc1.fillText("msg2", 145, 145);
-			
-			drawArrow(arr,110, 125,210, 125);
-			//gc1.fillText("msg1", 145, 120);
-		}
-		if(count==5) {
-			//gc1.fillText("msg2", 145, 145);
-			drawArrowOpp(arrOpp,110, 150,210, 150);
-			
-		}
-		
-		if(count==6) {
-			
-			drawArrowOpp(arrOpp,220, 185,320, 185);
-		}
-		if(count==7) {
-			
-			drawArrow(arr,220, 210,320, 210);
-		}
-		if(count==8) {
-			
-			drawArrowOpp(arrOpp,110, 245,320, 245);
-		}
-		if(count==9) {
-			
-			//gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-			gc.clearRect(-150, -200, canvas.getWidth(), canvas.getHeight());
-			initialize(null, null);
-			count = 0;
-			//gc1.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-		}
-        if (count==0) { 
-        	
-        	//gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-		}
-		//*/
-		 //drawObjects(gc);
-		// new FileTransfer();
-		//new FileReceive(); 
 	 }
 	
 	
