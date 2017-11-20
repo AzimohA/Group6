@@ -196,19 +196,19 @@ public class MainController extends Thread implements Initializable {
 					
 					//Client cl= new Client();
 				//	try {
-						//new Server().runServer();
-					//} catch (IOException e) {
+				//		 new Server().runServer();
+				//	  } catch (IOException e) {
 						// TODO Auto-generated catch block
 						//e.printStackTrace();
 					//}
 				 }
 			  }).start();
-		  //*/
-	//	 else {
-		//	 serverSocket.close();
-		 //}
-	
-		 //else myRan.setText("server closed!");
+	   //*/
+	   //	 else {
+	   //	 serverSocket.close();
+	   //}
+	   //else myRan.setText("server closed!");
+			 
 	 }catch(Exception e) {
 		 
 	 }
